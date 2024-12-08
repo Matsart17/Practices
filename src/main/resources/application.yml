@@ -1,0 +1,10 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: admin123
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: on_param
