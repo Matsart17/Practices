@@ -1,9 +1,13 @@
-package MyProject.demo.Entities;
+package MyProject.demo.Student;
 
+import MyProject.demo.Group.Group;
+import MyProject.demo.Practice.Practice;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "students")
+@Table(name = "student")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,8 +19,14 @@ public class Student {
     @Column(nullable = false)
     private String password_hash;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_group_id")
+    private Group student_group;
+//, nullable = false
+    @OneToMany(mappedBy = "student")
+    private List<Practice> practices;
+
     private String full_name;
-    private String group_cipher;
     private String address;
     private String phone;
     private String email;
@@ -27,6 +37,7 @@ public class Student {
     public Long getId() {
         return id;
     }
+
     public String getLogin() {
         return login;
     }
@@ -45,10 +56,6 @@ public class Student {
 
     public String getFull_name() {
         return full_name;
-    }
-
-    public String getGroup_cipher() {
-        return group_cipher;
     }
 
     public String getAddress() {
@@ -83,10 +90,6 @@ public class Student {
         this.full_name = fullName;
     }
 
-    public void setGroup_cipher(String groupCipher) {
-        this.group_cipher = groupCipher;
-    }
-
     public void setAddress(String address) {
         this.address = address;
     }
@@ -109,20 +112,5 @@ public class Student {
 
     public void setJob_type(String jobType) {
         this.job_type = jobType;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", fullName='" + full_name + '\'' +
-                ", groupCipher='" + group_cipher + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", comments='" + comments + '\'' +
-                ", currentJob=" + current_job +
-                ", jobType='" + job_type + '\'' +
-                '}';
     }
 }

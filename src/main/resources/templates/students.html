@@ -1,81 +1,186 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Таблица студентов</h1>-->
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th>ID</th>-->
+<!--        <th>LOGIN</th>-->
+<!--        <th>PASSWORD_HASH</th>-->
+<!--        <th>FULL_NAME</th>-->
+<!--        <th>GROUP_CIPHER</th>-->
+<!--        <th>ADDRESS</th>-->
+<!--        <th>PHONE</th>-->
+<!--        <th>EMAIL</th>-->
+<!--        <th>COMMENTS</th>-->
+<!--        <th>CURRENT_JOB</th>-->
+<!--        <th>JOB_TYPE</th>-->
+<!--    </tr>-->
+<!--    <tr th:each ="s: ${students}">-->
+<!--        <td th:text ="${s.id}"></td>-->
+<!--        <td th:text ="${s.login}"></td>-->
+<!--        <td th:text ="${s.password_hash}"></td>-->
+<!--        <td th:text ="${s.full_name}"></td>-->
+<!--        <td th:text ="${s.group_cipher}"></td>-->
+<!--        <td th:text ="${s.address}"></td>-->
+<!--        <td th:text ="${s.phone}"></td>-->
+<!--        <td th:text ="${s.email}"></td>-->
+<!--        <td th:text ="${s.comments}"></td>-->
+<!--        <td th:text ="${s.current_job}"></td>-->
+<!--        <td th:text ="${s.job_type}"></td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+<!--<h1>Посмотреть таблицу студентов</h1>-->
+<!--<form action="/students" method="GET">-->
+<!--    <p> <button type="submit">List student</button> </p>-->
+<!--</form>-->
+
+<!--<h1>Добавить студента</h1>-->
+<!--<form action="/students" method="POST">-->
+<!--    <p> Login: <input type="text" name="login"> </p>-->
+<!--    <p> Password_hash: <input type="text" name="password_hash"> </p>-->
+<!--    <p> Full_name: <input type="text" name="full_name"> </p>-->
+<!--    <p> Group_cipher:   <input type="text" name="group_ciphers"> </p>-->
+<!--    <p> Address: <input type="text" name="address"> </p>-->
+<!--    <p> Phone: <input type="text" name="phone"> </p>-->
+<!--    <p> Email: <input type="text" name="email"> </p>-->
+<!--    <p> Comments: <input type="text" name="comments"> </p>-->
+<!--    <p> Current_job: <input type="text" name="current_job"> </p>-->
+<!--    <p> Job_type: <input type="text" name="job_type"> </p>-->
+<!--    <p> <button type="submit">Add student</button> </p>-->
+<!--</form>-->
+
+<!--<h1>Удалить студента</h1>-->
+<!--<form action="/students/delete" method="GET">-->
+<!--    Id: <input type="number" name="id">-->
+<!--    <p> <button type="submit">Delete student</button> </p>-->
+<!--</form>-->
+
+<!--<h1>Изменить данные студента</h1>-->
+<!--<form action="/students/edit" method="GET">-->
+<!--    <p> Id: <input type="number" name="id"> </p>-->
+<!--    <p> Login: <input type="text" name="login"> </p>-->
+<!--    <p> Password_hash: <input type="text" name="password_hash"> </p>-->
+<!--    <p> Full_name: <input type="text" name="full_name"> </p>-->
+<!--    <p> Group_cipher:   <input type="text" name="group_ciphers"> </p>-->
+<!--    <p> Address: <input type="text" name="address"> </p>-->
+<!--    <p> Phone: <input type="text" name="phone"> </p>-->
+<!--    <p> Email: <input type="text" name="email"> </p>-->
+<!--    <p> Comments: <input type="text" name="comments"> </p>-->
+<!--    <p> Current_job: <input type="text" name="current_job"> </p>-->
+<!--    <p> Job_type: <input type="text" name="job_type"> </p>-->
+<!--    <p> <button type="submit">Edit student</button> </p>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<h1>Таблица студентов</h1>
-<table>
-    <tr>
-        <th>ID</th>
-        <th>LOGIN</th>
-        <th>PASSWORD_HASH</th>
-        <th>FULL_NAME</th>
-        <th>GROUP_CIPHER</th>
-        <th>ADDRESS</th>
-        <th>PHONE</th>
-        <th>EMAIL</th>
-        <th>COMMENTS</th>
-        <th>CURRENT_JOB</th>
-        <th>JOB_TYPE</th>
-    </tr>
-    <tr th:each ="s: ${students}">
-        <td th:text ="${s.id}"></td>
-        <td th:text ="${s.login}"></td>
-        <td th:text ="${s.password_hash}"></td>
-        <td th:text ="${s.full_name}"></td>
-        <td th:text ="${s.group_cipher}"></td>
-        <td th:text ="${s.address}"></td>
-        <td th:text ="${s.phone}"></td>
-        <td th:text ="${s.email}"></td>
-        <td th:text ="${s.comments}"></td>
-        <td th:text ="${s.current_job}"></td>
-        <td th:text ="${s.job_type}"></td>
-    </tr>
-</table>
 
-<h1>Посмотреть таблицу студентов</h1>
-<form action="/students" method="GET">
-    <p> <button type="submit">List student</button> </p>
-</form>
+<div class="container mt-5">
 
-<h1>Добавить студента</h1>
-<form action="/students" method="POST">
-    <p> Login: <input type="text" name="login"> </p>
-    <p> Password_hash: <input type="text" name="password_hash"> </p>
-    <p> Full_name: <input type="text" name="full_name"> </p>
-    <p> Group_cipher:   <input type="text" name="group_ciphers"> </p>
-    <p> Address: <input type="text" name="address"> </p>
-    <p> Phone: <input type="text" name="phone"> </p>
-    <p> Email: <input type="text" name="email"> </p>
-    <p> Comments: <input type="text" name="comments"> </p>
-    <p> Current_job: <input type="text" name="current_job"> </p>
-    <p> Job_type: <input type="text" name="job_type"> </p>
-    <p> <button type="submit">Add student</button> </p>
-</form>
+    <!-- Header Section -->
+    <h1 class="text-center mb-4">Students List</h1>
 
-<h1>Удалить студента</h1>
-<form action="/students/delete" method="GET">
-    Id: <input type="number" name="id">
-    <p> <button type="submit">Delete student</button> </p>
-</form>
+    <!-- Table to Display Students -->
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Login</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Group</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterating over students and displaying them -->
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.login}"></td>
+            <td th:text="${student.full_name}"></td>
+            <td th:text="${student.email}"></td>
+            <td th:text="${student.phone}"></td>
+            <td th:text="${student.group.name}"></td>
+            <td>
+                <!-- Actions such as edit, delete can go here -->
+                <button class="btn btn-info btn-sm">Edit</button>
+                <button class="btn btn-danger btn-sm">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
-<h1>Изменить данные студента</h1>
-<form action="/students/edit" method="GET">
-    <p> Id: <input type="number" name="id"> </p>
-    <p> Login: <input type="text" name="login"> </p>
-    <p> Password_hash: <input type="text" name="password_hash"> </p>
-    <p> Full_name: <input type="text" name="full_name"> </p>
-    <p> Group_cipher:   <input type="text" name="group_ciphers"> </p>
-    <p> Address: <input type="text" name="address"> </p>
-    <p> Phone: <input type="text" name="phone"> </p>
-    <p> Email: <input type="text" name="email"> </p>
-    <p> Comments: <input type="text" name="comments"> </p>
-    <p> Current_job: <input type="text" name="current_job"> </p>
-    <p> Job_type: <input type="text" name="job_type"> </p>
-    <p> <button type="submit">Edit student</button> </p>
-</form>
+    <!-- Add New Student Form -->
+    <h2 class="text-center mt-5">Add New Student</h2>
+    <form th:action="@{/students}" method="post">
+        <div class="form-group">
+            <label for="login">Login</label>
+            <input type="text" id="login" name="login" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="full_name">Full Name</label>
+            <input type="text" id="full_name" name="full_name" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" name="phone" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="current_job">Current Job</label>
+            <input type="text" id="current_job" name="current_job" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="job_type">Job Type</label>
+            <input type="text" id="job_type" name="job_type" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="group">Group</label>
+            <input type="text" id="group" name="group" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="password_hash">Password</label>
+            <input type="password" id="password_hash" name="password_hash" class="form-control" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Student</button>
+    </form>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

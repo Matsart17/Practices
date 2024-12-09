@@ -1,8 +1,6 @@
-package MyProject.demo.Controllers;
+package MyProject.demo.Student;
 
-import MyProject.demo.Entities.Student;
 import MyProject.demo.Exceptions.ErrorException;
-import MyProject.demo.Repositories.StudentRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
