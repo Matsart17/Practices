@@ -1,9 +1,10 @@
 package MyProject.demo.User;
 
+import MyProject.demo.Student.Student;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "myuser")
 public class MyUser {
 
     @Id
@@ -17,7 +18,10 @@ public class MyUser {
     private String password;
 
     @Column(nullable = false)
-    private String role;
+    private String role = "USER";
+
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "myUser")
+    private Student student;
 
     public Long getId() {
         return id;

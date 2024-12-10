@@ -2,6 +2,7 @@ package MyProject.demo.Student;
 
 import MyProject.demo.Group.Group;
 import MyProject.demo.Practice.Practice;
+import MyProject.demo.User.MyUser;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -12,50 +13,32 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
-    private String login;
-
-    @Column(nullable = false)
-    private String password_hash;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "student_group_id")
-    private Group student_group;
-//, nullable = false
-    @OneToMany(mappedBy = "student")
-    private List<Practice> practices;
-
-    private String full_name;
+    private String fullName;
     private String address;
     private String phone;
     private String email;
     private String comments;
-    private String current_job;
-    private String job_type;
+    private String currentJob;
+    private String jobType;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "student_group_id")
+    private Group studentGroup;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private MyUser myUser;
+
+    @OneToMany(mappedBy = "student")
+    private List<Practice> practices;
+
 
     public Long getId() {
         return id;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword_hash() {
-        return password_hash;
-    }
-
-    public void setPassword_hash(String passwordHash) {
-        this.password_hash = passwordHash;
-    }
-
-    public String getFull_name() {
-        return full_name;
+    public String getFullName() {
+        return fullName;
     }
 
     public String getAddress() {
@@ -74,20 +57,20 @@ public class Student {
         return comments;
     }
 
-    public String getCurrent_job() {
-        return current_job;
+    public String getCurrentJob() {
+        return currentJob;
     }
 
-    public String getJob_type() {
-        return job_type;
+    public String getJobType() {
+        return jobType;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setFull_name(String fullName) {
-        this.full_name = fullName;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public void setAddress(String address) {
@@ -106,11 +89,27 @@ public class Student {
         this.comments = comments;
     }
 
-    public void setCurrent_job(String currentJob) {
-        this.current_job = currentJob;
+    public void setCurrentJob(String currentJob) {
+        this.currentJob = currentJob;
     }
 
-    public void setJob_type(String jobType) {
-        this.job_type = jobType;
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+
+    public Group getStudentGroup() {
+        return studentGroup;
+    }
+
+    public void setStudentGroup(Group student_group) {
+        this.studentGroup = student_group;
+    }
+
+    public MyUser getMyUser() {
+        return myUser;
+    }
+
+    public void setMyUser(MyUser myuser) {
+        this.myUser = myuser;
     }
 }

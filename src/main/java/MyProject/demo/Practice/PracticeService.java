@@ -52,12 +52,6 @@ public class PracticeService {
         practice.setDirector(practiceDTO.getDirector());
         practice.setPosition(practiceDTO.getPosition());
         practice.setWork(practiceDTO.getWork());
-        practice.setStarting(practiceDTO.getStarting());
-        practice.setEnding(practiceDTO.getEnding());
-        practice.setReportPassed(practiceDTO.isReportPassed());
-        practice.setFutureWork(practiceDTO.isFutureWork());
-        practice.setNextYear(practiceDTO.isNextYear());
-        practice.setPayed(practiceDTO.isPayed());
         return practice;
     }
 }

@@ -1,5 +1,9 @@
 package MyProject.demo.Student;
 
+import MyProject.demo.Group.Group;
+import MyProject.demo.Group.GroupRepository;
+import MyProject.demo.User.MyUser;
+import MyProject.demo.User.MyUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -46,13 +50,13 @@ public class StudentService {
 
     public Student convertDTOtoStudent(StudentDTO studentDTO) {
         Student student = new Student();
-        student.setFull_name(studentDTO.getFull_name());
+        student.setFullName(studentDTO.getFull_name());
         student.setAddress(studentDTO.getAddress());
         student.setPhone(studentDTO.getPhone());
         student.setEmail(studentDTO.getEmail());
         student.setComments(studentDTO.getComments());
-        student.setCurrent_job(studentDTO.getCurrent_job());
-        student.setJob_type(studentDTO.getJob_type());
+        student.setCurrentJob(studentDTO.getCurrent_job());
+        student.setJobType(studentDTO.getJob_type());
         return student;
     }
 }

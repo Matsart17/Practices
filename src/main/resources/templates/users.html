@@ -11,8 +11,8 @@
     <tr>
         <th>ID</th>
         <th>LOGIN</th>
-        <th>NAME</th>
         <th>PASSWORD</th>
+        <th>ROLE</th>
     </tr>
     <tr th:each ="u: ${users}">
         <td th:text ="${u.id}"></td>
@@ -23,12 +23,12 @@
 </table>
 
 <h1>Посмотреть таблицу пользователей</h1>
-<form action="/users" method="GET">
+<form action="/api/users" method="GET">
     <p> <button type="submit">List student</button> </p>
 </form>
 
 <h1>Добавить пользователя</h1>
-<form action="/users" method="POST">
+<form action="/api/users" method="POST">
     <p><input type="text" name="username" placeholder="Username"></p>
     <p><input type="text" name="password" placeholder="Password"></p>
     <p><input type="text" name="role" placeholder="Role"></p>

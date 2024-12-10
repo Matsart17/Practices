@@ -2,12 +2,8 @@ package MyProject.demo.Company;
 
 
 import MyProject.demo.Practice.Practice;
-import MyProject.demo.Student.Student;
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 @Entity

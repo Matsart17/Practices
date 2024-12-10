@@ -23,12 +23,6 @@ public class Practice {
     private String director = "Не указан";
     private String position = "Не указан";
     private String work = "Не указан";
-    private Date starting = new Date();
-    private Date ending = new Date();
-    private boolean reportPassed = false;
-    private boolean futureWork = false;
-    private boolean nextYear = false;
-    private boolean isPayed = false;
 
     public long getId() {
         return id;
@@ -84,54 +78,6 @@ public class Practice {
 
     public void setWork(String work) {
         this.work = work;
-    }
-
-    public Date getStarting() {
-        return starting;
-    }
-
-    public void setStarting(Date starting) {
-        this.starting = starting;
-    }
-
-    public Date getEnding() {
-        return ending;
-    }
-
-    public void setEnding(Date ending) {
-        this.ending = ending;
-    }
-
-    public boolean isReportPassed() {
-        return reportPassed;
-    }
-
-    public void setReportPassed(boolean reportPassed) {
-        this.reportPassed = reportPassed;
-    }
-
-    public boolean isFutureWork() {
-        return futureWork;
-    }
-
-    public void setFutureWork(boolean futureWork) {
-        this.futureWork = futureWork;
-    }
-
-    public boolean isNextYear() {
-        return nextYear;
-    }
-
-    public void setNextYear(boolean nextYear) {
-        this.nextYear = nextYear;
-    }
-
-    public boolean isPayed() {
-        return isPayed;
-    }
-
-    public void setPayed(boolean payed) {
-        isPayed = payed;
     }
 }
 

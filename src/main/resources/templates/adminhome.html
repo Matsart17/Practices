@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #ffffff;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .links {
+            margin-top: 1.5rem;
+        }
+        .link {
+            display: inline-block;
+            margin: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 2px solid #ffffff;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .link:hover {
+            background-color: #ffffff;
+            color: #2575fc;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to the API Home Page</h1>
+    <p>Choose one of the options below to proceed:</p>
+    <div class="links">
+        <a class="link" href="/api/user/form">Go to Form API</a>
+        <a class="link" href="/api/students">Go to Students API</a>
+        <a class="link" href="/api/users">Go to Users API</a>
+    </div>
+</div>
+</body>
+</html>

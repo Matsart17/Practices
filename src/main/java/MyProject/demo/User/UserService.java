@@ -1,6 +1,7 @@
 package MyProject.demo.User;
 
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Limit;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +15,10 @@ import java.util.List;
 public class UserService implements UserDetailsService {
     @Autowired
     private MyUserRepository myUserRepository;
-    // Основные функции для получения данных из бд
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     public List<MyUser> getAllUsers() {
         return myUserRepository.findAll();
 
@@ -25,7 +29,9 @@ public class UserService implements UserDetailsService {
     }
 
     public MyUser createUser(MyUser myUser) {
-        return myUserRepository.save(myUser);
+        if(myUserRepository.getMyUserByUsername(myUser.getUsername()) != null) {
+            throw new UsernameNotFoundException("Username already exists");
+        }return myUserRepository.save(myUser);
     }
 
     public MyUser deleteUser(long id) {
@@ -42,12 +48,13 @@ public class UserService implements UserDetailsService {
     public MyUser convertDTOToUser(UserDTO userDTO) {
         MyUser myUser = new MyUser();
         myUser.setUsername(userDTO.getUsername());
-        myUser.setPassword(userDTO.getPassword());
+        myUser.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        myUser.setRole(userDTO.getRole());
         return myUser;
     }
     // Дополнительные функции
     public MyUser getUserByUsername(String username) {
-        return myUserRepository.getUserByUsername(username);
+        return myUserRepository.getMyUserByUsername(username);
     }
 
     @Override

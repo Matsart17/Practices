@@ -1,12 +1,12 @@
 package MyProject.demo.User;
 
+import jakarta.validation.constraints.Pattern;
+
 public class UserDTO {
     private long id;
     private String username;
     private String password;
-    private String firstName;
-    private String lastName;
-    private String email;
+    private String role;
 
     public long getId() {
         return id;
@@ -20,4 +20,5 @@ public class UserDTO {
         return password;
     }
 
+    public String getRole() {return role;}
 }

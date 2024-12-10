@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+</head>
+<body>
+<h1>Submit Your Details</h1>
+<form action="/api/user/form" method="post">
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
+    <br><br>
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" required>
+    <br><br>
+
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" name="phone" required>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments"></textarea>
+    <br><br>
+
+    <label for="currentJob">Current Job:</label>
+    <input type="text" id="currentJob" name="currentJob" required>
+    <br><br>
+
+    <label for="jobType">Job Type:</label>
+    <input type="text" id="jobType" name="jobType" required>
+    <br><br>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <br><br>
+
+    <label for="groupName">Group Name:</label>
+    <input type="text" id="groupName" name="groupName" required>
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

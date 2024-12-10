@@ -24,7 +24,9 @@ public class GroupService {
     }
 
     public Group addGroup(Group group) {
-        return groupRepository.save(group);
+        if (groupRepository.getGroupByGroupName(group.getGroupName())!=null){
+            return groupRepository.getGroupByGroupName(group.getGroupName());
+        }return groupRepository.save(group);
     }
 
     public Group updateGroupById(Group group, long id) {

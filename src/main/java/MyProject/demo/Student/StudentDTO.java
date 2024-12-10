@@ -19,6 +19,8 @@ public class StudentDTO {
     private String comments;
     private String current_job;
     private String job_type;
+    private String groupName;
+    private String userName;
 
 
     public String getFull_name() {

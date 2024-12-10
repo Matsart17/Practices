@@ -14,7 +14,7 @@ public class Group {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToMany(mappedBy = "student_group")
+    @OneToMany(mappedBy = "studentGroup")
     private Set<Student> students;
 
     private String groupName;
