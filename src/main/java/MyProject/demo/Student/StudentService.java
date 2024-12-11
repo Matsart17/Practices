@@ -1,9 +1,5 @@
 package MyProject.demo.Student;
 
-import MyProject.demo.Group.Group;
-import MyProject.demo.Group.GroupRepository;
-import MyProject.demo.User.MyUser;
-import MyProject.demo.User.MyUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;

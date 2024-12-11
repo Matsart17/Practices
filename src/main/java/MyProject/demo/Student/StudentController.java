@@ -20,7 +20,7 @@ public class StudentController {
     }
 
     @GetMapping
-    public String viewProducts(@ModelAttribute Student s, Model model) {
+    public String viewStudents(@ModelAttribute Student s, Model model) {
         model.addAttribute("student", studentRepository.findAll());
         return "students";
     }
